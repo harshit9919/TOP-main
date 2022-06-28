@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-padding-top: 2rem;
+    scroll-behavior: smooth;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    background-color: black;
+    color: white;
+}
+body{
+    overflow-x: hidden;
+}
+:root{
+    --main-color: #f0ec00;
+    --second-color: #f0ec00;
+    --text-color: #444;
+    --gradient: #f0ec00;
+}
+
+.dialogbox{
+    display: block;
+    padding: 40px;
+    position: absolute;
+    top: 120px;
+    left: 500px;
+    z-index: 1;
+    color: #f0ec00;
+    border: 2px solid #f0ec00;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.dialogbox h2, .dialogbox a{
+    color: #f0ec00;
+}
+
+.dialog-form-btn{
+    flex: 1 1 7rem;
+    padding: 10px 34px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 0.5rem;
+    background: #f0ec00;
+    color: black;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.dialogbox-form div{
+    margin: 25px;
+}

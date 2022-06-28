@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+        
+    <link rel="stylesheet" href="css/search-result.css">
+    
+</head>
+<body>
+    
+    <h1>Rides Details</h1>
+
+  <section>
+    <div class="swiper mySwiper container">
+      <div class="swiper-wrapper content">
+        
+      <% for (let i=0; i<details.length; i++){ %>
+        <div class="swiper-slide card">
+          <div class="card-content">
+            <div class="image">
+                <img src="./img/user.jpeg" alt="">
+            </div>
+
+            <div class="name-profession">
+              <span class="name"><%= details[i].driver.first_name %> <%= details[i].driver.last_name %></span>
+              <span class="profession"><%= details[i].from %> to <%= details[i].to %></span>
+              <span class="profession"><%= details[i].date %></span>
+              <span class="profession">No. of Passengers - <%= details[i].seats %></span>
+              <span class="profession">Price/Seat - ₹<%= details[i].price %></span>
+              <span class="profession">Contact - <%= details[i].driver.phNumber %></span> 
+            </div>
+          </div>
+        </div>
+    <% } %>
+      </div>
+    </div>
+
+    <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+  </section>
+
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+ 
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      slidesPerGroup: 3,
+      loop: true,
+      loopFillGroupWithBlank: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+
+</body>
+</html>

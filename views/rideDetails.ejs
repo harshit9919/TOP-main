@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver's form</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        background: black;
+    }
+
+    .container {
+        max-width: 700px;
+        width: 100%;
+        color: #f0ec00;
+        background-color: black;
+        padding: 25px 30px;
+        border-radius: 20px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .container .title {
+        font-size: 30px;
+        font-weight: 800;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .content form .user-details {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 20px 0 12px 80px;
+    }
+
+    form .user-details .input-box {
+        margin-bottom: 15px;
+        
+    }
+
+    form .input-box span.details {
+        display: block;
+        font-weight: 500;
+        margin-bottom: 5px;
+        
+    }
+
+    .user-details .input-box input {
+        height: 45px;
+        outline: none;
+        font-size: 16px;
+        border-radius: 10px;
+        padding-left: 15px;
+        margin-right: 40px;
+        border: 1px solid #ccc;
+        border-bottom-width: 2px;
+    }
+
+
+    form .button {
+        height: 45px;
+        margin: 15px 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    form .button input {
+        height: 100%;
+        width: 90%;
+        border-radius: 10px;
+        border: none;
+        color: black;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background: #f0ec00;
+    }
+
+</style>
+<body>
+    <div class="container">
+        <div class="title">* Ride Details *</div>
+        <div class="content">
+            <form action="/publish-ride"  method="post">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">From</span>
+                        <input type="text" placeholder="Enter pickup location" name="from" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">To</span>
+                        <input type="text" placeholder="Enter Destination" name="to" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Date</span>
+                        <input type="date" placeholder="Enter date" name="date" required>
+                    </div>
+                    <div class="input-box" style="margin-right: 0px;margin-left: 50px;">
+                        <span class="details">Registered Email</span>
+                        <input type="email" placeholder="Enter your email" name="driverEmail" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Passengers</span>
+                        <input type="number" placeholder="Enter number of Passengers" name="seats" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Price</span>
+                        <input type="number" placeholder="Enter price in Rs." name="price" required>
+                    </div>
+                </div>
+                <div class="button">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

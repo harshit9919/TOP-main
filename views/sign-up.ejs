@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        background: black;
+    }
+
+    .container {
+        max-width: 700px;
+        width: 100%;
+        color: #f0ec00;
+        background-color: black;
+        padding: 25px 30px;
+        border-radius: 20px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .container .title {
+        font-size: 30px;
+        font-weight: 800;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .content form .user-details {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 20px 0 12px 80px;
+    }
+
+    form .user-details .input-box {
+        margin-bottom: 15px;
+    }
+
+    form .input-box span.details {
+        display: block;
+        font-weight: 500;
+        margin-bottom: 5px;
+    }
+
+    .user-details .input-box input {
+        height: 45px;
+        outline: none;
+        font-size: 16px;
+        border-radius: 10px;
+        padding-left: 15px;
+        margin-right: 40px;
+        border: 1px solid #ccc;
+        border-bottom-width: 2px;
+    }
+
+    form .register-details{
+        border: 2px solid #f0ec00;
+        border-radius: 10px;
+        margin: 0 130px;
+        padding: 10px;
+    }
+
+    form .register-details .register-title {
+        font-size: 20px;
+        font-weight: 500;
+        display: flex;
+        justify-content: center;
+    }
+
+    form .category {
+        display: flex;
+        justify-content: center;
+        width: 105%;
+    }
+    
+    form .category label {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        margin-right: 40px;
+    }
+
+    form .category label .dot {
+        height: 18px;
+        width: 18px;
+        border-radius: 50%;
+        margin-right: 10px;
+        background: #d9d9d9;
+        border: 5px solid transparent;
+        transition: all 0.3s ease;
+    }
+
+    #dot-1:checked~.category label .one,
+    #dot-2:checked~.category label .two,
+    #dot-3:checked~.category label .three {
+        background: black;
+        border-color: #d9d9d9;
+    }
+
+    form input[type="radio"] {
+        display: none;
+    }
+
+    form .button {
+        height: 45px;
+        margin: 15px 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    form .sign-in{
+        height: 22px;
+        width: auto;
+        margin: 5px 5px;
+        display: flex;
+        justify-content: center;
+        border-radius: 5px;
+        border: none;
+        color: #f0ec00;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    form .button input {
+        height: 100%;
+        width: 90%;
+        border-radius: 10px;
+        border: none;
+        color: black;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background: #f0ec00;
+    }
+
+</style>
+
+<body>
+    <div class="container">
+        <div class="title">* Please Register Yourself *</div>
+        <div class="content">
+            <form action="/register" method="post">
+                <div class="register-details">
+                    <input type="radio" name="register_1" id="dot-1">
+                    <input type="radio" name="register_2" id="dot-2">
+                    <span class="register-title">How are you Registering ?</span>
+                    <div class="category">
+                        <label for="dot-1">
+                            <span class="dot one" onclick="DLhide()"></span>
+                            <span class="reg" onclick="DLhide()">As a User</span>
+                        </label>
+                        <label for="dot-2">
+                            <span class="dot two" onclick="DLdisplay()"></span>
+                            <span class="reg" onclick="DLdisplay()">As a Driver</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">First Name</span>
+                        <input type="text" placeholder="First Name" name="fName" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Last Name</span>
+                        <input type="text" placeholder="Last Name" name="lName" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Email</span>
+                        <input type="email" placeholder="Email" name="email" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Phone Number</span>
+                        <input type="number" placeholder="Mobile Number" name="pNum" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Password</span>
+                        <input type="password" placeholder="Password" name="password" required>
+                    </div>
+                    <div class="input-box" id="dl">
+                        <span class="details" id="dlText">Driving Licence Number</span>
+                        <input type="text" id="dlInput" placeholder="Enter your DL number" name="identity">
+                    </div>
+                </div>
+                <div>
+                    <a href="/login" class="sign-in">Already Registered?</a>
+                </div>
+                <div class="button">
+                    <input type="submit" value="Register">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+<script>
+    function DLhide(){
+        $("#dl").hide();
+    }
+    function DLdisplay(){
+        $("#dl").show();
+        $("#dlInput").prop("required", true);
+    }
+</script>
+
+</html>
